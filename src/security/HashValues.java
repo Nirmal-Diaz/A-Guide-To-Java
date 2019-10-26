@@ -32,14 +32,14 @@ class HashValues {
 
     //NOTE: "DigestInputStream" is best suited for generating hash values for files
     //NOTE: Use on() on DigestInputStream to partially read files and generate hashes
-    static MessageDigest demonstrateDigestInputStream(File file, String algorithm) {
+    static byte[] demonstrateDigestInputStream(File file, String algorithm) {
         //NOTE: A "DigestInputStream" has a ByteInputStream and a MessageDigest
         try (DigestInputStream digestInputStream = new DigestInputStream(new FileInputStream(file), MessageDigest.getInstance(algorithm))) {
             while (digestInputStream.read() != -1) {
                 //NOTE: When we call read() on the "DigestInputStream", it automatically reads the ByteInputStream and update() the MessageDigest
                 //NOTE: This is an empty loop. All the work is done inside the expression area
             }
-            return digestInputStream.getMessageDigest();
+            return digestInputStream.getMessageDigest().digest();
         } catch (NoSuchAlgorithmException nsae) {
             System.out.println("NoSuchAlgorithmException occurred");
         } catch (FileNotFoundException fnfe) {
