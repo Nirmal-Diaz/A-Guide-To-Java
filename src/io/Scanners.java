@@ -14,10 +14,6 @@ public class Scanners {
             while (scanner.hasNext()) {
                 System.out.println(scanner.next());
             }
-
-            if (scanner != null) {
-                scanner.close();
-            }
         } catch(FileNotFoundException e) {
             System.out.println("FileNotFoundException occurred");
         }
