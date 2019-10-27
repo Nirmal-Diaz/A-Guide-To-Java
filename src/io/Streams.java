@@ -60,10 +60,10 @@ import java.io.BufferedWriter;
 //           ================================================================                                      ==================================================================
 //           |                      |                   |                   |                                      |                      |                    |                    |
 //  ByteArrayInputStream    FilterInputStream    FileInputStream    ObjectInputStream                   ByteArrayOutputStream    FilterOutputStream    FileOutputStream    ObjectOutputStream
-//                                  |                                                                              |
-//                     =========================                                               ==========================================
-//                     |                       |                                               |                   |                    |
-//            BufferedInputStream       DataInputStream                             BufferedOutputStream     DataOutputStream        PrintStream
+//                                  |                                                                                                     |
+//                     =========================                                                                      ==========================================
+//                     |                       |                                                                      |                   |                    |
+//            BufferedInputStream       DataInputStream                                                    BufferedOutputStream     DataOutputStream        PrintStream
 
 class ByteStreams {
     //Use "resources/textOriginal.txt" as default inputFilePath
